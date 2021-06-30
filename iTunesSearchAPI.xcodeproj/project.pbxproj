@@ -8,22 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		02CB19B126896E6F0042B1E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CB19B026896E6F0042B1E0 /* AppDelegate.swift */; };
-		02CB19B326896E6F0042B1E0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CB19B226896E6F0042B1E0 /* SceneDelegate.swift */; };
 		02CB19B526896E6F0042B1E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CB19B426896E6F0042B1E0 /* ViewController.swift */; };
 		02CB19B826896E6F0042B1E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02CB19B626896E6F0042B1E0 /* Main.storyboard */; };
 		02CB19BA26896E710042B1E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02CB19B926896E710042B1E0 /* Assets.xcassets */; };
 		02CB19BD26896E720042B1E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02CB19BB26896E710042B1E0 /* LaunchScreen.storyboard */; };
+		02CB19C626896F3A0042B1E0 /* iTunesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CB19C526896F3A0042B1E0 /* iTunesService.swift */; };
+		02CB19C8268975150042B1E0 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CB19C7268975150042B1E0 /* BaseService.swift */; };
+		02CB19CB26897B8D0042B1E0 /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CB19CA26897B8D0042B1E0 /* Music.swift */; };
+		02CB19CD2689A6E40042B1E0 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CB19CC2689A6E40042B1E0 /* AudioPlayer.swift */; };
+		02CB19D02689AA590042B1E0 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02CB19CF2689AA580042B1E0 /* AudioToolbox.framework */; };
+		02CB19D3268AC9370042B1E0 /* MusicViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CB19D2268AC9370042B1E0 /* MusicViewModel.swift */; };
+		02CB19D6268ACE780042B1E0 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CB19D5268ACE780042B1E0 /* Box.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		02CB19AD26896E6F0042B1E0 /* iTunesSearchAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesSearchAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02CB19B026896E6F0042B1E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		02CB19B226896E6F0042B1E0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		02CB19B426896E6F0042B1E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		02CB19B726896E6F0042B1E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		02CB19B926896E710042B1E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02CB19BC26896E720042B1E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02CB19BE26896E720042B1E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02CB19C526896F3A0042B1E0 /* iTunesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iTunesService.swift; sourceTree = "<group>"; };
+		02CB19C7268975150042B1E0 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		02CB19CA26897B8D0042B1E0 /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
+		02CB19CC2689A6E40042B1E0 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		02CB19CF2689AA580042B1E0 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		02CB19D2268AC9370042B1E0 /* MusicViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewModel.swift; sourceTree = "<group>"; };
+		02CB19D5268ACE780042B1E0 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		02CB19D7268C0A040042B1E0 /* iTunesSearchAPIDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iTunesSearchAPIDebug.entitlements; sourceTree = "<group>"; };
+		F9A6477861AA742BD74FB0AF /* Pods_iTunesSearchAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iTunesSearchAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02CB19D02689AA590042B1E0 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +57,7 @@
 			children = (
 				02CB19AF26896E6F0042B1E0 /* iTunesSearchAPI */,
 				02CB19AE26896E6F0042B1E0 /* Products */,
+				583D5B35C20527560AB4211A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +72,62 @@
 		02CB19AF26896E6F0042B1E0 /* iTunesSearchAPI */ = {
 			isa = PBXGroup;
 			children = (
+				02CB19D7268C0A040042B1E0 /* iTunesSearchAPIDebug.entitlements */,
 				02CB19B026896E6F0042B1E0 /* AppDelegate.swift */,
-				02CB19B226896E6F0042B1E0 /* SceneDelegate.swift */,
 				02CB19B426896E6F0042B1E0 /* ViewController.swift */,
 				02CB19B626896E6F0042B1E0 /* Main.storyboard */,
+				02CB19C426896F270042B1E0 /* Services */,
+				02CB19C926897B6B0042B1E0 /* Models */,
+				02CB19D1268AC90D0042B1E0 /* View Models */,
+				02CB19D4268ACE450042B1E0 /* Utililies */,
 				02CB19B926896E710042B1E0 /* Assets.xcassets */,
 				02CB19BB26896E710042B1E0 /* LaunchScreen.storyboard */,
 				02CB19BE26896E720042B1E0 /* Info.plist */,
 			);
 			path = iTunesSearchAPI;
+			sourceTree = "<group>";
+		};
+		02CB19C426896F270042B1E0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				02CB19C7268975150042B1E0 /* BaseService.swift */,
+				02CB19C526896F3A0042B1E0 /* iTunesService.swift */,
+				02CB19CC2689A6E40042B1E0 /* AudioPlayer.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		02CB19C926897B6B0042B1E0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				02CB19CA26897B8D0042B1E0 /* Music.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		02CB19D1268AC90D0042B1E0 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+				02CB19D2268AC9370042B1E0 /* MusicViewModel.swift */,
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		02CB19D4268ACE450042B1E0 /* Utililies */ = {
+			isa = PBXGroup;
+			children = (
+				02CB19D5268ACE780042B1E0 /* Box.swift */,
+			);
+			path = Utililies;
+			sourceTree = "<group>";
+		};
+		583D5B35C20527560AB4211A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				02CB19CF2689AA580042B1E0 /* AudioToolbox.framework */,
+				F9A6477861AA742BD74FB0AF /* Pods_iTunesSearchAPI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +202,12 @@
 			files = (
 				02CB19B526896E6F0042B1E0 /* ViewController.swift in Sources */,
 				02CB19B126896E6F0042B1E0 /* AppDelegate.swift in Sources */,
-				02CB19B326896E6F0042B1E0 /* SceneDelegate.swift in Sources */,
+				02CB19D3268AC9370042B1E0 /* MusicViewModel.swift in Sources */,
+				02CB19C8268975150042B1E0 /* BaseService.swift in Sources */,
+				02CB19C626896F3A0042B1E0 /* iTunesService.swift in Sources */,
+				02CB19D6268ACE780042B1E0 /* Box.swift in Sources */,
+				02CB19CB26897B8D0042B1E0 /* Music.swift in Sources */,
+				02CB19CD2689A6E40042B1E0 /* AudioPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +284,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -271,7 +339,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -286,9 +354,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = iTunesSearchAPI/iTunesSearchAPIDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CKB979D52M;
 				INFOPLIST_FILE = iTunesSearchAPI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,6 +378,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CKB979D52M;
 				INFOPLIST_FILE = iTunesSearchAPI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
