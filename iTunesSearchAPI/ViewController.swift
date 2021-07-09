@@ -37,6 +37,22 @@ class ViewController: UIViewController {
                 self?.navigationItem.rightBarButtonItem = barButton
             }
         }
+        playingViewModel.errorString.bind { [weak self] title, message in
+            if !message.isEmpty {
+                let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alert.addAction(okAction)
+                self?.present(alert, animated: true, completion: nil)
+            }
+        }
+        trackListViewModel.errorString.bind { [weak self] title, message in
+            if !message.isEmpty {
+                let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alert.addAction(okAction)
+                self?.present(alert, animated: true, completion: nil)
+            }
+        }
     }
     
     @objc func playAndPauseButtonPress() {
@@ -52,19 +68,6 @@ extension ViewController: UISearchBarDelegate {
         }
         trackListViewModel.getSearchResultListFrom(keyword: keyword) {
             self.tableView.reloadData()
-        } failure: { error in
-            switch error {
-            case .emptyData, .notFoundUrl:
-                let alert = UIAlertController(title: "Not Found", message: "no search result", preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                alert.addAction(okAction)
-                self.present(alert, animated: true, completion: nil)
-            default:
-                let alert = UIAlertController(title: "Connection Error", message: "please try again", preferredStyle: .alert)
-                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                alert.addAction(okAction)
-                self.present(alert, animated: true, completion: nil)
-            }
         }
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		023D3D2026981D5400B965F1 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023D3D1F26981D5400B965F1 /* BaseViewModel.swift */; };
 		02CB19B126896E6F0042B1E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CB19B026896E6F0042B1E0 /* AppDelegate.swift */; };
 		02CB19B526896E6F0042B1E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CB19B426896E6F0042B1E0 /* ViewController.swift */; };
 		02CB19B826896E6F0042B1E0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02CB19B626896E6F0042B1E0 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		023D3D1F26981D5400B965F1 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		02CB19AD26896E6F0042B1E0 /* iTunesSearchAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesSearchAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02CB19B026896E6F0042B1E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02CB19B426896E6F0042B1E0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 		02CB19D1268AC90D0042B1E0 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				023D3D1F26981D5400B965F1 /* BaseViewModel.swift */,
 				02CB19D2268AC9370042B1E0 /* MusicViewModel.swift */,
 				02DB903C269581E7007BDBA2 /* TrackListViewModel.swift */,
 				02DB9039269444B4007BDBA2 /* TrackListCellViewModel.swift */,
@@ -222,6 +225,7 @@
 				02CB19D3268AC9370042B1E0 /* MusicViewModel.swift in Sources */,
 				02DB9038269438C0007BDBA2 /* TrackTableViewCell.swift in Sources */,
 				02DB903A269444B4007BDBA2 /* TrackListCellViewModel.swift in Sources */,
+				023D3D2026981D5400B965F1 /* BaseViewModel.swift in Sources */,
 				02CB19C8268975150042B1E0 /* BaseService.swift in Sources */,
 				02CB19C626896F3A0042B1E0 /* ItunesService.swift in Sources */,
 				02CB19D6268ACE780042B1E0 /* Box.swift in Sources */,

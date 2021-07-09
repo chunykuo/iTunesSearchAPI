@@ -7,14 +7,15 @@
 
 import UIKit.UIImage
 
-public class MusicViewModel {
+public class MusicViewModel: BaseViewModel {
     private let player = AudioPlayer.sharedInstance
     private var observeToken: NSKeyValueObservation?
     let playingTrackTitle = Box(" ")
     let playingTrackImage: Box<UIImage?> = Box(nil)
     var isPlaying: Box<Bool> = Box(false)
     
-    init() {
+    override init() {
+        super.init()
         player.delegate = self
         observeToken = player.observe(\.isPlaying, options: [.new]) { [weak self] player, change in
             if let newValue = change.newValue {
@@ -51,11 +52,19 @@ public class MusicViewModel {
             print(error)
         }
     }
+    
+    override func showError(title: String?, message: String) {
+        self.errorString.value = (title ?? "Playing Error", message)
+    }
 }
 
 extension MusicViewModel: AudioPlayerDelegate {
     func trackDidPlayToEnd() {
         self.playingTrackTitle.value = ""
         self.playingTrackImage.value = nil
+    }
+    
+    func playing(error: Error) {
+        showError(title: nil, message: error.localizedDescription)
     }
 }

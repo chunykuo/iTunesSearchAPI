@@ -7,13 +7,13 @@
 
 import Foundation
 
-public class TrackListViewModel {
+public class TrackListViewModel: BaseViewModel {
     let trackList: Box<[TrackListCellViewModel?]> = Box([])
     var numberOfCell: Int {
         return trackList.value.count
     }
     
-    func getSearchResultListFrom(keyword: String, success: @escaping () -> Void, failure: @escaping (BaseServiceError) -> Void) {
+    func getSearchResultListFrom(keyword: String, success: @escaping () -> Void) {
         let searchAPI = ItunesService()
         searchAPI.searchMusic(for: keyword) { [weak self] music in
             self?.trackList.value = []
@@ -26,7 +26,12 @@ public class TrackListViewModel {
             }
             success()
         } failure: { error in
-            failure(error)
+            switch error {
+            case .emptyData:
+                self.showError(title: "Result not found", message: error.localizedDescription)
+            default:
+                self.showError(title: "Get result failed", message: error.localizedDescription)
+            }
         }
     }
 }
