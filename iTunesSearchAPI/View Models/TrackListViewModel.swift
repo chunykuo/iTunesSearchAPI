@@ -30,7 +30,7 @@ public class TrackListViewModel: BaseViewModel {
             case .emptyData:
                 self.showError(title: "Result not found", message: error.localizedDescription)
             default:
-                self.showError(title: "Get result failed", message: error.localizedDescription)
+                self.showError(title: error.rawValue, message: error.localizedDescription)
             }
         }
     }

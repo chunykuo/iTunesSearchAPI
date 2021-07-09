@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum BaseServiceError: Error {
+enum BaseServiceError: String, Error {
     case failedRequest
     case invalidResponse
     case emptyData

@@ -21,7 +21,17 @@ class ViewController: UIViewController {
         searchBar.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
+        
         title = "iTunes Music Search"
+        playingViewDataBinding()
+        trackListViewDataBinding()
+    }
+    
+    @objc func playAndPauseButtonPress() {
+        playingViewModel.continueOrResumePlay()
+    }
+    
+    func playingViewDataBinding() {
         playingViewModel.playingTrackTitle.bind { [weak self] title in
             self?.playingLabel.text = title
         }
@@ -45,6 +55,9 @@ class ViewController: UIViewController {
                 self?.present(alert, animated: true, completion: nil)
             }
         }
+    }
+    
+    func trackListViewDataBinding() {
         trackListViewModel.errorString.bind { [weak self] title, message in
             if !message.isEmpty {
                 let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -53,10 +66,6 @@ class ViewController: UIViewController {
                 self?.present(alert, animated: true, completion: nil)
             }
         }
-    }
-    
-    @objc func playAndPauseButtonPress() {
-        playingViewModel.continueOrResumePlay()
     }
 }
 
