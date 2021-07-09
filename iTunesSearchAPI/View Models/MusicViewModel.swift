@@ -5,30 +5,57 @@
 //  Created by David Kuo on 2021/6/29.
 //
 
-import Foundation
+import UIKit.UIImage
 
 public class MusicViewModel {
     private let player = AudioPlayer.sharedInstance
-    let playingTrack: Box<Music?> = Box(nil)
-    let trackOfList: Box<[Music?]> = Box([])
-    let trackTitle = Box(" ")
+    private var observeToken: NSKeyValueObservation?
+    let playingTrackTitle = Box(" ")
+    let playingTrackImage: Box<UIImage?> = Box(nil)
+    var isPlaying: Box<Bool> = Box(false)
     
-    func getSearchResultListFrom(keyword: String, finish: @escaping () -> Void) {
-        let searchAPI = iTunesService()
-        searchAPI.searchMusic(for: keyword) { music in
-            self.trackOfList.value = []
-            self.trackOfList.value = music
-            finish()
-        } failure: { error in
-            print(error)
+    init() {
+        player.delegate = self
+        observeToken = player.observe(\.isPlaying, options: [.new]) { [weak self] player, change in
+            if let newValue = change.newValue {
+                self?.isPlaying.value = newValue
+            }
         }
     }
     
     func playFrom(track: Music) {
         if let validURL = URL(string: track.previewUrl) {
-            player.playAudioFor(url: validURL)
-            playingTrack.value = track
-            trackTitle.value = track.artistName + " - " + track.trackName
+            player.playNewAudioFor(url: validURL)
+            playingTrackTitle.value = track.artistName + " - " + track.trackName
         }
+        fetchImageFrom(track: track)
+    }
+    
+    func continueOrResumePlay() {
+        if player.isPlaying {
+            player.pause()
+        } else {
+            player.resumePlaying()
+        }
+    }
+    
+    func fetchImageFrom(track: Music) {
+        playingTrackImage.value = nil
+        let validURL = track.artworkUrl100
+        let baseAPI = BaseService()
+        baseAPI.getImageFrom(url: validURL) { data in
+            DispatchQueue.main.async {
+                self.playingTrackImage.value = UIImage(data: data)
+            }
+        } failure: { error in
+            print(error)
+        }
+    }
+}
+
+extension MusicViewModel: AudioPlayerDelegate {
+    func trackDidPlayToEnd() {
+        self.playingTrackTitle.value = ""
+        self.playingTrackImage.value = nil
     }
 }

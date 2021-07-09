@@ -11,8 +11,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var playingLabel: UILabel!
+    @IBOutlet weak var playingImageView: UIImageView!
     
-    private let viewModel = MusicViewModel()
+    private let playingViewModel = MusicViewModel()
+    private let trackListViewModel = TrackListViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,9 +22,25 @@ class ViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         title = "iTunes Music Search"
-        viewModel.trackTitle.bind { [weak self] title in
+        playingViewModel.playingTrackTitle.bind { [weak self] title in
             self?.playingLabel.text = title
         }
+        playingViewModel.playingTrackImage.bind { [weak self] image in
+            self?.playingImageView.image = image
+        }
+        playingViewModel.isPlaying.bind { [weak self] isPlaying in
+            if isPlaying {
+                let barButton = UIBarButtonItem(barButtonSystemItem: .pause, target: self, action: #selector(self?.playAndPauseButtonPress))
+                self?.navigationItem.rightBarButtonItem = barButton
+            } else {
+                let barButton = UIBarButtonItem(barButtonSystemItem: .play, target: self, action: #selector(self?.playAndPauseButtonPress))
+                self?.navigationItem.rightBarButtonItem = barButton
+            }
+        }
+    }
+    
+    @objc func playAndPauseButtonPress() {
+        playingViewModel.continueOrResumePlay()
     }
 }
 
@@ -32,29 +50,46 @@ extension ViewController: UISearchBarDelegate {
         guard let keyword = searchBar.text, keyword != "" else {
             return
         }
-        viewModel.getSearchResultListFrom(keyword: keyword) {
+        trackListViewModel.getSearchResultListFrom(keyword: keyword) {
             self.tableView.reloadData()
+        } failure: { error in
+            switch error {
+            case .emptyData, .notFoundUrl:
+                let alert = UIAlertController(title: "Not Found", message: "no search result", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alert.addAction(okAction)
+                self.present(alert, animated: true, completion: nil)
+            default:
+                let alert = UIAlertController(title: "Connection Error", message: "please try again", preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alert.addAction(okAction)
+                self.present(alert, animated: true, completion: nil)
+            }
         }
     }
 }
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.trackOfList.value.count
+        return trackListViewModel.numberOfCell
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        let viewModelData = viewModel.trackOfList.value[indexPath.row]
-        cell.textLabel?.text = viewModelData?.trackName
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? TrackTableViewCell else {
+            fatalError("Not found cell")
+        }
+        if let rowViewModel = trackListViewModel.trackList.value[indexPath.row] {
+            cell.setupDataBind(viewModel: rowViewModel)
+        }
         return cell
     }
 }
 
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let music = viewModel.trackOfList.value[indexPath.row] {
-            viewModel.playFrom(track: music)
+        let trackIndexPath = trackListViewModel.trackList.value[indexPath.row]
+        if let track = trackIndexPath?.track.value {
+            playingViewModel.playFrom(track: track)
         }
     }
 }

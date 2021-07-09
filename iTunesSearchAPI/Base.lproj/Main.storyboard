@@ -26,7 +26,7 @@
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="a4A-zq-nAp">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="a4A-zq-nAp" customClass="TrackTableViewCell" customModule="iTunesSearchAPI" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="68.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="a4A-zq-nAp" id="Zjw-TU-mfw">
@@ -40,17 +40,27 @@
                                 <rect key="frame" x="0.0" y="812" width="414" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6m5-NV-rin">
-                                        <rect key="frame" x="186" y="14.5" width="42" height="21"/>
+                                        <rect key="frame" x="90" y="14.5" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DMA-LH-t9P">
+                                        <rect key="frame" x="20" y="0.0" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="BFj-W2-s0D"/>
+                                            <constraint firstAttribute="height" constant="50" id="Z7O-jo-6TE"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="6m5-NV-rin" firstAttribute="centerY" secondItem="jE3-fX-Esb" secondAttribute="centerY" id="4mu-Mg-YXl"/>
+                                    <constraint firstItem="DMA-LH-t9P" firstAttribute="leading" secondItem="jE3-fX-Esb" secondAttribute="leading" constant="20" id="UJ5-W0-9bY"/>
                                     <constraint firstAttribute="height" constant="50" id="Ylp-lY-qJZ"/>
-                                    <constraint firstItem="6m5-NV-rin" firstAttribute="centerX" secondItem="jE3-fX-Esb" secondAttribute="centerX" id="sBg-Bb-UQ2"/>
+                                    <constraint firstAttribute="bottom" secondItem="DMA-LH-t9P" secondAttribute="bottom" id="ZkL-jq-nJf"/>
+                                    <constraint firstItem="6m5-NV-rin" firstAttribute="leading" secondItem="DMA-LH-t9P" secondAttribute="trailing" constant="20" id="r7L-TI-HOw"/>
+                                    <constraint firstItem="DMA-LH-t9P" firstAttribute="top" secondItem="jE3-fX-Esb" secondAttribute="top" id="vD5-ml-dGT"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -68,6 +78,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="QmQ-SC-7pA"/>
                     <connections>
+                        <outlet property="playingImageView" destination="DMA-LH-t9P" id="uh2-SW-8yp"/>
                         <outlet property="playingLabel" destination="6m5-NV-rin" id="xne-e7-cE2"/>
                         <outlet property="searchBar" destination="6kf-E1-61p" id="Ww7-GN-8eO"/>
                         <outlet property="tableView" destination="RXD-cW-7UT" id="cFN-Iq-zDt"/>
