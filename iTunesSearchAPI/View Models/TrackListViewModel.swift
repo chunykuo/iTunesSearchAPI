@@ -16,14 +16,15 @@ public class TrackListViewModel: BaseViewModel {
     func getSearchResultListFrom(keyword: String, success: @escaping () -> Void) {
         let searchAPI = ItunesService()
         searchAPI.searchMusic(for: keyword) { [weak self] music in
-            self?.trackList.value = []
+            var cells: [TrackListCellViewModel] = []
             for track in music {
                 let cell = TrackListCellViewModel()
                 cell.title.value = track.trackName
                 cell.imageUrl.value = track.artworkUrl100
                 cell.track.value = track
-                self?.trackList.value.append(cell)
+                cells.append(cell)
             }
+            self?.trackList.value = cells
             success()
         } failure: { error in
             switch error {
