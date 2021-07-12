@@ -33,6 +33,9 @@ public class MusicViewModel: BaseViewModel {
     }
     
     func continueOrResumePlay() {
+        guard player.player.currentItem != nil else {
+            return
+        }
         if player.isPlaying {
             player.pause()
         } else {

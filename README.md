@@ -1,5 +1,5 @@
 # iTunesSearchAPI
 
-Using [iTunes Search API](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/) to create, user can search manny content in iTunes Store
+![](https://img.shields.io/badge/Platform-iOS%209.0%2B-lightgrey.svg)
 
-### Deployment Target: iOS 9.0 or later
+Using [iTunes Search API](https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/) to create, user can search many content in iTunes Store

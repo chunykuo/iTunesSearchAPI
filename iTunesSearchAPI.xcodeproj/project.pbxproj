@@ -45,7 +45,6 @@
 		02DB9037269438C0007BDBA2 /* TrackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackTableViewCell.swift; sourceTree = "<group>"; };
 		02DB9039269444B4007BDBA2 /* TrackListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListCellViewModel.swift; sourceTree = "<group>"; };
 		02DB903C269581E7007BDBA2 /* TrackListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListViewModel.swift; sourceTree = "<group>"; };
-		F9A6477861AA742BD74FB0AF /* Pods_iTunesSearchAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iTunesSearchAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +144,6 @@
 			isa = PBXGroup;
 			children = (
 				02CB19CF2689AA580042B1E0 /* AudioToolbox.framework */,
-				F9A6477861AA742BD74FB0AF /* Pods_iTunesSearchAPI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

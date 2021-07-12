@@ -19,7 +19,6 @@ class AudioPlayer: NSObject {
     var nowPlayingTime: CMTime?
     @objc dynamic var isPlaying = false
     var delegate: AudioPlayerDelegate?
-    private var observeToken: NSKeyValueObservation?
     
     private override init() {
         super.init()
