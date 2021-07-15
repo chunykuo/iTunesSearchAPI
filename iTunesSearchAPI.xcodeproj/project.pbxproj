@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0202A118269D3ACC00ADEB59 /* TrackListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0202A116269D3A8300ADEB59 /* TrackListViewModelTests.swift */; };
+		0202A14A269FE40A00ADEB59 /* MusicViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0202A149269FE40A00ADEB59 /* MusicViewModelTests.swift */; };
 		023D3D2026981D5400B965F1 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023D3D1F26981D5400B965F1 /* BaseViewModel.swift */; };
 		02CB19B126896E6F0042B1E0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CB19B026896E6F0042B1E0 /* AppDelegate.swift */; };
 		02CB19B526896E6F0042B1E0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CB19B426896E6F0042B1E0 /* ViewController.swift */; };
@@ -40,6 +41,7 @@
 		0202A109269D395C00ADEB59 /* iTunesSearchAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTunesSearchAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0202A116269D3A8300ADEB59 /* TrackListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackListViewModelTests.swift; sourceTree = "<group>"; };
 		0202A117269D3A8300ADEB59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0202A149269FE40A00ADEB59 /* MusicViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicViewModelTests.swift; sourceTree = "<group>"; };
 		023D3D1F26981D5400B965F1 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		02CB19AD26896E6F0042B1E0 /* iTunesSearchAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesSearchAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02CB19B026896E6F0042B1E0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 		0202A115269D3A8300ADEB59 /* iTunesSearchAPITests */ = {
 			isa = PBXGroup;
 			children = (
+				0202A149269FE40A00ADEB59 /* MusicViewModelTests.swift */,
 				0202A116269D3A8300ADEB59 /* TrackListViewModelTests.swift */,
 				0202A117269D3A8300ADEB59 /* Info.plist */,
 			);
@@ -280,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0202A14A269FE40A00ADEB59 /* MusicViewModelTests.swift in Sources */,
 				0202A118269D3ACC00ADEB59 /* TrackListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

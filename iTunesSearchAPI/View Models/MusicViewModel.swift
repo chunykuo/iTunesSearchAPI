@@ -32,7 +32,7 @@ public class MusicViewModel: BaseViewModel {
         fetchImageFrom(track: track)
     }
     
-    func continueOrResumePlay() {
+    func pauseOrResumePlay() {
         guard player.player.currentItem != nil else {
             return
         }

@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     }
     
     @objc func playAndPauseButtonPress() {
-        playingViewModel.continueOrResumePlay()
+        playingViewModel.pauseOrResumePlay()
     }
     
     func playingViewDataBinding() {
