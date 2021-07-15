@@ -25,7 +25,6 @@ class ViewController: UIViewController {
         title = "iTunes Music Search"
         playingViewDataBinding()
         trackListViewDataBinding()
-        print(playingLabel.frame.origin.x)
     }
     
     @objc func playAndPauseButtonPress() {
@@ -35,11 +34,6 @@ class ViewController: UIViewController {
     func playingViewDataBinding() {
         playingViewModel.playingTrackTitle.bind { [weak self] title in
             self?.playingLabel.text = title
-            UIView.animate(withDuration: 12, delay: 1, options: [.curveLinear, .repeat]) {
-                let startX = (0 - (self?.playingLabel.bounds.size.width ?? 0) / 2) + (self?.playingLabel.frame.origin.x ?? 0)
-                let startY = self?.playingLabel.center.y ?? 0
-                self?.playingLabel.center = CGPoint(x: startX, y: startY)
-            }
         }
         playingViewModel.playingTrackImage.bind { [weak self] image in
             self?.playingImageView.image = image

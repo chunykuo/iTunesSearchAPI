@@ -8,7 +8,7 @@
 import Foundation
 import AVKit
 
-protocol AudioPlayerDelegate {
+protocol AudioPlayerDelegate: AnyObject {
     func trackDidPlayToEnd()
     func playing(error: Error)
 }
@@ -18,7 +18,7 @@ class AudioPlayer: NSObject {
     var player = AVPlayer()
     var nowPlayingTime: CMTime?
     @objc dynamic var isPlaying = false
-    var delegate: AudioPlayerDelegate?
+    weak var delegate: AudioPlayerDelegate?
     
     private override init() {
         super.init()

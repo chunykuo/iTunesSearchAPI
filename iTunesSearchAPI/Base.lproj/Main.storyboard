@@ -40,7 +40,7 @@
                                 <rect key="frame" x="0.0" y="812" width="414" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6m5-NV-rin">
-                                        <rect key="frame" x="90" y="14.5" width="42" height="21"/>
+                                        <rect key="frame" x="90" y="14.5" width="304" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -59,6 +59,7 @@
                                     <constraint firstItem="DMA-LH-t9P" firstAttribute="leading" secondItem="jE3-fX-Esb" secondAttribute="leading" constant="20" id="UJ5-W0-9bY"/>
                                     <constraint firstAttribute="height" constant="50" id="Ylp-lY-qJZ"/>
                                     <constraint firstAttribute="bottom" secondItem="DMA-LH-t9P" secondAttribute="bottom" id="ZkL-jq-nJf"/>
+                                    <constraint firstAttribute="trailing" secondItem="6m5-NV-rin" secondAttribute="trailing" constant="20" id="hwz-5C-fN4"/>
                                     <constraint firstItem="6m5-NV-rin" firstAttribute="leading" secondItem="DMA-LH-t9P" secondAttribute="trailing" constant="20" id="r7L-TI-HOw"/>
                                     <constraint firstItem="DMA-LH-t9P" firstAttribute="top" secondItem="jE3-fX-Esb" secondAttribute="top" id="vD5-ml-dGT"/>
                                 </constraints>
